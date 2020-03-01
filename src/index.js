@@ -1,0 +1,1 @@
+export const MESSAGE = 'Here will be example'

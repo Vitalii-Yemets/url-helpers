@@ -1,25 +1,36 @@
 {
   "name": "url-helpers",
   "version": "1.0.0",
-  "description": "This is a simple set of URL helpers.",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config ./webpack/webpack.config.dev.js --host localhost --port 3000",
+    "build": "webpack --config ./webpack/webpack.config.production.js --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vitalii-Yemets/url-helpers.git"
   },
-  "keywords": [
-    "url",
-    "url-builder",
-    "pagination\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5C\u001b[1;5C\u001b[1;5C\u001b[1;5C\u001b[1;5C-manager",
-    "pagination-builder"
-  ],
-  "author": " (\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C<>\u001b[Dvitalii-yemets@outlook.com>)",
+  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Vitalii-Yemets/url-helpers/issues"
   },
-  "homepage": "https://github.com/Vitalii-Yemets/url-helpers#readme"
+  "homepage": "https://github.com/Vitalii-Yemets/url-helpers#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "babel-loader": "^8.0.6",
+    "clean-terminal-webpack-plugin": "^2.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "open-browser-webpack-plugin": "0.0.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-simple-progress-plugin": "0.0.4"
+  }
 }
