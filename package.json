@@ -1,0 +1,25 @@
+{
+  "name": "url-helpers",
+  "version": "1.0.0",
+  "description": "This is a simple set of URL helpers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vitalii-Yemets/url-helpers.git"
+  },
+  "keywords": [
+    "url",
+    "url-builder",
+    "pagination\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5C\u001b[1;5C\u001b[1;5C\u001b[1;5C\u001b[1;5C-manager",
+    "pagination-builder"
+  ],
+  "author": " (\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C<>\u001b[Dvitalii-yemets@outlook.com>)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vitalii-Yemets/url-helpers/issues"
+  },
+  "homepage": "https://github.com/Vitalii-Yemets/url-helpers#readme"
+}
