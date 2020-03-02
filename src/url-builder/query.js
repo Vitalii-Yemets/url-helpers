@@ -29,7 +29,10 @@ export const queryParametrResoleve = query => {
     }
 
     if (typeof query === 'object') {
-        return query
+
+        return Object.keys(query)
+            .map(key => ({ name: key, value: query[key] }))
+
     }
 }
 
@@ -37,13 +40,7 @@ export const queryParametrResoleve = query => {
 export const parseQuery = params => {
 
     const query = params
-        .map(param => {
-
-            const key = Object.keys(param)[0]
-            const value = param[key]
-
-            return `${[key]}=${value}&`
-        })
+        .map(({ name, value }) => `${name}=${value}&`)
         .reduce((parts, part) => parts += part, '')
         .replace(/&+$/, '')
 

@@ -56,12 +56,8 @@ export class UrlBuilder {
 
 
     query (query) {
-
         const resolved = queryParametrResoleve(query)
-
-        const params = Array.isArray(resolved)
-            ? mergeUnique(this.parts.params, resolved, (first, second) => first.name === second.name)
-            : mergeUnique(this.parts.params, [resolved], (first, second) => first.name === second.name)
+        const params = mergeUnique(this.parts.params, resolved, (first, second) => first.name === second.name)
 
         this.parts = {
             ...this.parts,
@@ -72,9 +68,7 @@ export class UrlBuilder {
     }
 
     param (name, value) {
-
         this.query({ [name]: value })
-
         return this
     }
 

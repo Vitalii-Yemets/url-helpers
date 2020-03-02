@@ -4,10 +4,11 @@ import { UrlBuilder } from './src'
 
 const url = new UrlBuilder('http://example.com')
     .path('about/test')
-    .query({ foo: 'bar' })
+    // .query({ foo: 'bar' })
     .param('bar', 'baz')
+    .param('test2', 'baz')
     .toString()
-
+debugger
 
 const urlExample = `const url = new UrlBuilder('http://example.com')
             .path('about/test')
