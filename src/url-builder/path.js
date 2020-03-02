@@ -1,0 +1,40 @@
+import { isEmpty } from '../utils'
+
+
+export const throwIfPathIvalid = path => {
+
+    if (typeof path !== 'string' && !Array.isArray(path)) {
+        throw new Error('Path must be a string or an array of strings.')
+    }
+
+}
+
+
+export const pathResolve = path => {
+
+    if (typeof path === 'string') {
+
+        return path
+
+    } else if (Array.isArray(path)) {
+
+        return path.join('/')
+
+    } else {
+
+        return ''
+
+    }
+
+}
+
+
+export const parsePath = host => {
+
+    return isEmpty(host)
+        ? ''
+        : `${host}`
+
+}
+
+

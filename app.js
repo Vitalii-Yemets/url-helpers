@@ -1,8 +1,15 @@
 import './style.css'
 
-import { MESSAGE } from './src'
+import { UrlBuilder } from './src'
+
+const url = new UrlBuilder('http://example.com')
+    .setPath('about/test')
+    .addParameter({ foo: 'bar' })
+    .addParameter({ foo: 'bar' })
+    .toString()
+
 
 const rootElement = document.getElementById('root')
 
-rootElement.innerText = MESSAGE
+rootElement.innerText = url
 

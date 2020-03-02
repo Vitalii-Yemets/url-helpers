@@ -1,1 +1,5 @@
-export const MESSAGE = 'Here will be example'
+import { UrlBuilder } from './url-builder/url-builder'
+
+export {
+    UrlBuilder
+}

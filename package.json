@@ -32,5 +32,8 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-simple-progress-plugin": "0.0.4"
+  },
+  "dependencies": {
+    "jsutils": "git+https://github.com/Vitalii-Yemets/jsutils.git"
   }
 }
