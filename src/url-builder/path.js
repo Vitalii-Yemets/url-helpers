@@ -13,27 +13,22 @@ export const throwIfPathIvalid = path => {
 export const pathResolve = path => {
 
     if (typeof path === 'string') {
-
-        return path
-
-    } else if (Array.isArray(path)) {
-
-        return path.join('/')
-
-    } else {
-
-        return ''
-
+        return [path]
     }
 
+    if (Array.isArray(path)) {
+        return path
+    }
+
+    return []
 }
 
 
-export const parsePath = host => {
+export const parsePath = pathes => {
 
-    return isEmpty(host)
-        ? ''
-        : `${host}`
+    return pathes.length
+        ? pathes.join('/').replace(/\/+$/, '')
+        : ''
 
 }
 

@@ -1,5 +1,5 @@
 // Utils
-import { mergeUnique } from 'jsutils/arrays'
+import { mergeUnique, first } from 'jsutils/arrays'
 
 // Parts
 import { throwIfHostInvalid, parseHost } from './host'
@@ -17,7 +17,7 @@ export class UrlBuilder {
 
         this.parts = {
             host: '',
-            path: '',
+            pathes: [],
             params: []
         }
 
@@ -46,9 +46,13 @@ export class UrlBuilder {
 
         throwIfPathIvalid(path)
 
+        const resolved = pathResolve(path)
+
+        const pathes = mergeUnique(this.parts.pathes, resolved, (first, second) => first === second)
+
         this.parts = {
             ...this.parts,
-            path: pathResolve(path)
+            pathes
         }
 
         return this
@@ -76,10 +80,9 @@ export class UrlBuilder {
     build () {
 
         const host = parseHost(this.parts.host)
-        const path = parsePath(this.parts.path)
+        const pathes = parsePath(this.parts.pathes)
         const query = parseQuery(this.parts.params)
-
-        const url = `${host}/${path}${query.trim().length > 0 ? '?' : ''}${query}`
+        const url = `${pathes.trim().length > 0 ? host + '/' : host}${pathes}${query.trim().length > 0 ? '?' : ''}${query}`
 
         return url
     }

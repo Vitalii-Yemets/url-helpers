@@ -2,19 +2,20 @@ import './style.css'
 
 import { UrlBuilder } from './src'
 
-const url = new UrlBuilder('http://example.com')
-    .path('about/test')
-    // .query({ foo: 'bar' })
+const url = new UrlBuilder('http://localhost:5051/api/Encounters')
+    .path('test')
+    .path('test2')
+    .path('test3')
+    .query({ foo: 'bar' })
     .param('bar', 'baz')
     .param('test2', 'baz')
     .toString()
-debugger
 
-const urlExample = `const url = new UrlBuilder('http://example.com')
-            .path('about/test')
-            .query({ foo: 'bar' })
-            .param('bar', 'baz')
-            .toString()
+const urlExample = `const url = new UrlBuilder('http://localhost:5051/api/Encounters/')
+        .query({ foo: 'bar' })
+        .param('bar', 'baz')
+        .param('test2', 'baz')
+        .toString()
     `
 
 
