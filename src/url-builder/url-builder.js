@@ -73,7 +73,7 @@ export class UrlBuilder {
 
     param (name, value) {
 
-        this.query({ name: value })
+        this.query({ [name]: value })
 
         return this
     }
