@@ -4,7 +4,7 @@ import { mergeUnique } from 'jsutils/arrays'
 // Parts
 import { throwIfHostInvalid, parseHost } from './host'
 import { pathResolve, throwIfPathIvalid, parsePath } from './path'
-import { queryParametrResoleve, parseQuery } from './query'
+import { queryParametrResoleve, parseQuery, throwIfQueryParametrInvalid } from './query'
 
 
 export class UrlBuilder {
@@ -22,12 +22,12 @@ export class UrlBuilder {
         }
 
         if (host) {
-            this.setHost(host)
+            this.host(host)
         }
     }
 
 
-    setHost (host) {
+    host (host) {
 
         if (!this.withoutHost) {
             throwIfHostInvalid(host)
@@ -42,7 +42,7 @@ export class UrlBuilder {
     }
 
 
-    setPath (path) {
+    path (path) {
 
         throwIfPathIvalid(path)
 
@@ -55,7 +55,7 @@ export class UrlBuilder {
     }
 
 
-    addParameter (query) {
+    query (query) {
 
         const resolved = queryParametrResoleve(query)
 
@@ -71,6 +71,13 @@ export class UrlBuilder {
         return this
     }
 
+    param (name, value) {
+
+        this.query({ name: value })
+
+        return this
+    }
+
 
     build () {
 
@@ -82,6 +89,7 @@ export class UrlBuilder {
 
         return url
     }
+
 
     toString () {
         return this.build()

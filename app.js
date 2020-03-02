@@ -3,9 +3,9 @@ import './style.css'
 import { UrlBuilder } from './src'
 
 const url = new UrlBuilder('http://example.com')
-    .setPath('about/test')
-    .addParameter({ foo: 'bar' })
-    .addParameter({ foo: 'bar' })
+    .path('about/test')
+    .query({ foo: 'bar' })
+    .param('bar', 'baz')
     .toString()
 
 
