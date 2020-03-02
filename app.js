@@ -9,7 +9,14 @@ const url = new UrlBuilder('http://example.com')
     .toString()
 
 
-const rootElement = document.getElementById('root')
+const urlExample = `const url = new UrlBuilder('http://example.com')
+            .path('about/test')
+            .query({ foo: 'bar' })
+            .param('bar', 'baz')
+            .toString()
+    `
 
-rootElement.innerText = url
+
+const urlBuilder = document.getElementById('url-builder')
+urlBuilder.innerText = `${urlExample}\n${url}`
 
